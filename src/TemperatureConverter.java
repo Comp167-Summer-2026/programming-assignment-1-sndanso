@@ -33,7 +33,7 @@ public class TemperatureConverter {
             // Store the user's input
             String tempInput = input.nextLine();
 
-            // Double checks if the user decides to end the program
+            // Check if the user wants to quit
             if (tempInput.equalsIgnoreCase("stop")) {
                 keepGoing = false;
             }
@@ -53,25 +53,23 @@ public class TemperatureConverter {
                 // Store the unit entered by the user
                 String unit = input.nextLine();
 
-                // Make sure the unit is either C or F
-                if (unit.equalsIgnoreCase("C") || unit.equalsIgnoreCase("F")) {
+                // If unit is not C or F, display error and default to C
+                if (!unit.equalsIgnoreCase("C") && !unit.equalsIgnoreCase("F")) {
+                    System.out.println("Invalid unit. Defaulting to Celsius.");
+                    unit = "C";
+                }
 
-                    // Perform the conversion
-                    double result = convertTemperature(temperature, unit);
+                // Perform the conversion
+                double result = convertTemperature(temperature, unit);
 
-                    // Display Celsius to Fahrenheit conversion
-                    if (unit.equalsIgnoreCase("C")) {
-                        System.out.printf("%.2fC is equal to %.2fF%n", temperature, result);
-                    }
+                // Display Celsius to Fahrenheit conversion
+                if (unit.equalsIgnoreCase("C")) {
+                    System.out.printf("%.2f\u00b0C is equal to %.2f\u00b0F%n", temperature, result);
+                }
 
-                    // Display Fahrenheit to Celsius conversion
-                    else {
-                        System.out.printf("%.2fF is equal to %.2fC%n", temperature, result);
-                    }
-
-                    // Display an error message for invalid unit, echoing the invalid input
-                } else {
-                    System.out.println(unit + " is not a valid unit.");
+                // Display Fahrenheit to Celsius conversion
+                else {
+                    System.out.printf("%.2f\u00b0F is equal to %.2f\u00b0C%n", temperature, result);
                 }
             }
         }
