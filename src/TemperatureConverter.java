@@ -45,7 +45,6 @@ public class TemperatureConverter {
 
             else {
 
-
                 double temperature = Double.parseDouble(tempInput);
 
                 // Ask the user for the temperature unit
@@ -54,32 +53,17 @@ public class TemperatureConverter {
                 // Store the unit entered by the user
                 String unit = input.nextLine();
 
-                // Make sure the unit is either C or F
-                if (unit.equalsIgnoreCase("C") || unit.equalsIgnoreCase("F")) {
+                // Perform the conversion
+                double result = convertTemperature(temperature, unit);
 
-                    //
-                    double result = convertTemperature(temperature, unit);
-
-                    // Display Celsius to Fahrenheit conversion
-                    if (unit.equalsIgnoreCase("C")) {
-
-                        System.out.printf("%.2fC is equal to %.2fF%n",
-                                temperature, result);
-
-                    }
-
-                    // Display Fahrenheit to Celsius conversion
-                    else {
-
-                        System.out.printf("%.2fF is equal to %.2fC%n",
-                                temperature, result);
-                    }
-
+                // Display Celsius to Fahrenheit conversion
+                if (unit.equalsIgnoreCase("C")) {
+                    System.out.printf("%.2fC is equal to %.2fF%n", temperature, result);
                 }
 
-                // Display an error message for invalid unit
+                // Display Fahrenheit to Celsius conversion
                 else {
-                    System.out.println("Invalid unit.");
+                    System.out.printf("%.2fF is equal to %.2fC%n", temperature, result);
                 }
             }
         }
@@ -88,4 +72,3 @@ public class TemperatureConverter {
         input.close();
     }
 }
-
