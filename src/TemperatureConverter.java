@@ -63,7 +63,7 @@ public class TemperatureConverter {
                     // Display Celsius to Fahrenheit conversion
                     if (unit.equalsIgnoreCase("C")) {
 
-                        System.out.printf("%.2f°C is equal to %.2f°F%n",
+                        System.out.printf("%.2fC is equal to %.2fF%n",
                                 temperature, result);
 
                     }
@@ -71,7 +71,7 @@ public class TemperatureConverter {
                     // Display Fahrenheit to Celsius conversion
                     else {
 
-                        System.out.printf("%.2f°F is equal to %.2f°C%n",
+                        System.out.printf("%.2fF is equal to %.2fC%n",
                                 temperature, result);
                     }
 
@@ -88,3 +88,4 @@ public class TemperatureConverter {
         input.close();
     }
 }
+
