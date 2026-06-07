@@ -1,3 +1,11 @@
+// Sydney Danso
+// Comp 167
+// Programming Assignment 1 - Temperature Converter
+// This program gets the users input of a temperature and a unit
+// (Celsius or Fahrenheit). Then converts the temperature
+// to the opposite unit and displays the results as the output.
+// The program continues to run until "stop" is inputted.
+
 import java.util.Scanner;
 
 public class TemperatureConverter {
